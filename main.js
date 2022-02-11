@@ -1,27 +1,24 @@
 window.onload = () => {
-  const anchors = document.querySelectorAll('a');
+  const anchor = document.querySelectorAll('a');
   const transition_el = document.querySelector('.transition');
 
   setTimeout(() => {
-    transition_el.classList.remove('is-active');
+    transition_el.classList.remove('is-active'); 
   }, 500);
 
-  for (let i = 0; i < anchors.length; i++) {
+  for (let i = 0; i < anchors.lenght; i++){
     const anchor = anchors[i];
 
     anchor.addEventListener('click', e => {
       e.preventDefault();
       let target = e.target.href;
 
-      console.log(transition_el);
-
       transition_el.classList.add('is-active');
 
-      console.log(transition_el);
-
-      setInterval(() => {
+      setTimeout(() =>{
         window.location.href = target;
-      }, 500);
-    })
+      },500);
+    });
+
   }
 }
